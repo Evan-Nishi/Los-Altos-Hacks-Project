@@ -2,10 +2,13 @@
 Adapted Code From:https://codeplasma.com/2012/12/03/getting-webcam-images-with-python-and-opencv-2-for-real-this-time/
 https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_gui/py_video_display/py_video_display.html
 https://stackoverflow.com/questions/34588464/python-how-to-capture-image-from-webcam-on-click-using-opencv
-Last: 3/24/2019
+Last: 3/23/2019
 '''
+
+import numpy as np
 import cv2
 import os
+#Used code from https://codeplasma.com/2012/12/03/getting-webcam-images-with-python-and-opencv-2-for-real-this-time/
 #captures video at port 0 (computer cam)
 cap = cv2.VideoCapture(0)
 
@@ -26,6 +29,7 @@ def vidcap():
                 break
         else:
             break
+#Used code from https://stackoverflow.com/questions/34588464/python-how-to-capture-image-from-webcam-on-click-using-opencv
 img_counter = 0
 def image_cap():
     #counts how many images are processed  
