@@ -2,10 +2,8 @@
 Adapted Code From:https://codeplasma.com/2012/12/03/getting-webcam-images-with-python-and-opencv-2-for-real-this-time/
 https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_gui/py_video_display/py_video_display.html
 https://stackoverflow.com/questions/34588464/python-how-to-capture-image-from-webcam-on-click-using-opencv
-Last: 3/23/2019
+Last: 3/24/2019
 '''
-
-import numpy as np
 import cv2
 import os
 #captures video at port 0 (computer cam)
@@ -28,11 +26,9 @@ def vidcap():
                 break
         else:
             break
-
+img_counter = 0
 def image_cap():
-    global img_counter
-    #counts how many images are processed
-    img_counter = 0    
+    #counts how many images are processed  
     cv2.namedWindow("test")
     while True:
         #reads frame by frame
@@ -63,7 +59,6 @@ ML/flask code goes here
 cap.release()
 out.release()
 #Removes all files after use
-print(removed_file)
 cv2.destroyAllWindows()
 times_of_loop = 0
 amount_of_remove_file = ("1"*img_counter)
