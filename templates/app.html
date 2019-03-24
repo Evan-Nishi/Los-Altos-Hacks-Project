@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- Adapted from: https://www.html5rocks.com/en/tutorials/getusermedia/intro/ -->
+<html>
+  <head>
+    <title>{{name}} | Application</title>
+    <meta lang="en-US" /> <!-- 'murica -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" />
+    <style>
+      body {
+        text-align: center;
+        background-color: #eeeeee;
+      }
+      nav {
+        background-color: #004400;
+        color: #dddddd;
+      }
+      </style>
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+      <script>
+        $(document).ready(function(){
+          var video = document.querySelector("video");//[0];
+          navigator.mediaDevices.getUserMedia({video: true}).then((stream) => {video.srcObject = stream});
+          function send_data(){
+            video.pause();
+          }
+        });
+      </script>
+  </head>
+  <body>
+    <nav>
+      <h1>{{name}}</h1>
+    </nav>
+    <div>
+      <video autoplay></video>
+      <br />
+      <button onclick="send_data()">Take Picture</button>
+    </div>
+</html>

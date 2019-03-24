@@ -1,9 +1,15 @@
 from flask import Flask, render_template
 
-app = Flask(__name__)
+flask_app: Flask = Flask(__name__)
 
-@app.route("/")
+name: str = "Plant-ID"
+
+@flask_app.route("/")
 def homepage():
-    return render_template("index.html", name="Plant-ID")
+    return render_template("index.html", name=name)
 
-app.run()
+@flask_app.route("/app")
+def app():
+    return render_template("app.html", name=name)
+
+flask_app.run()
